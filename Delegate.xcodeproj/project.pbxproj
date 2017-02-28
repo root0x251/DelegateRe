@@ -15,6 +15,9 @@
 		F97F6CAA1E648A4D005AF45A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F97F6CA81E648A4D005AF45A /* LaunchScreen.storyboard */; };
 		F97F6CB51E648A4E005AF45A /* DelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F97F6CB41E648A4E005AF45A /* DelegateTests.m */; };
 		F97F6CC01E648A4E005AF45A /* DelegateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F97F6CBF1E648A4E005AF45A /* DelegateUITests.m */; };
+		F97F6CCF1E648A5D005AF45A /* Human.m in Sources */ = {isa = PBXBuildFile; fileRef = F97F6CCE1E648A5D005AF45A /* Human.m */; };
+		F97F6CD21E648A69005AF45A /* NormDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = F97F6CD11E648A69005AF45A /* NormDoctor.m */; };
+		F97F6CD51E648A74005AF45A /* BadDoctor.m in Sources */ = {isa = PBXBuildFile; fileRef = F97F6CD41E648A74005AF45A /* BadDoctor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		F97F6CBB1E648A4E005AF45A /* DelegateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DelegateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F97F6CBF1E648A4E005AF45A /* DelegateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelegateUITests.m; sourceTree = "<group>"; };
 		F97F6CC11E648A4E005AF45A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F97F6CCD1E648A5D005AF45A /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Human.h; path = ../Human.h; sourceTree = "<group>"; };
+		F97F6CCE1E648A5D005AF45A /* Human.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Human.m; path = ../Human.m; sourceTree = "<group>"; };
+		F97F6CD01E648A69005AF45A /* NormDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NormDoctor.h; path = ../NormDoctor.h; sourceTree = "<group>"; };
+		F97F6CD11E648A69005AF45A /* NormDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NormDoctor.m; path = ../NormDoctor.m; sourceTree = "<group>"; };
+		F97F6CD31E648A74005AF45A /* BadDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BadDoctor.h; path = ../BadDoctor.h; sourceTree = "<group>"; };
+		F97F6CD41E648A74005AF45A /* BadDoctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BadDoctor.m; path = ../BadDoctor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,12 @@
 			children = (
 				F97F6C9D1E648A4D005AF45A /* AppDelegate.h */,
 				F97F6C9E1E648A4D005AF45A /* AppDelegate.m */,
+				F97F6CCD1E648A5D005AF45A /* Human.h */,
+				F97F6CCE1E648A5D005AF45A /* Human.m */,
+				F97F6CD01E648A69005AF45A /* NormDoctor.h */,
+				F97F6CD11E648A69005AF45A /* NormDoctor.m */,
+				F97F6CD31E648A74005AF45A /* BadDoctor.h */,
+				F97F6CD41E648A74005AF45A /* BadDoctor.m */,
 				F97F6CA01E648A4D005AF45A /* ViewController.h */,
 				F97F6CA11E648A4D005AF45A /* ViewController.m */,
 				F97F6CA31E648A4D005AF45A /* Main.storyboard */,
@@ -273,9 +288,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97F6CD21E648A69005AF45A /* NormDoctor.m in Sources */,
 				F97F6CA21E648A4D005AF45A /* ViewController.m in Sources */,
+				F97F6CD51E648A74005AF45A /* BadDoctor.m in Sources */,
 				F97F6C9F1E648A4D005AF45A /* AppDelegate.m in Sources */,
 				F97F6C9C1E648A4D005AF45A /* main.m in Sources */,
+				F97F6CCF1E648A5D005AF45A /* Human.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

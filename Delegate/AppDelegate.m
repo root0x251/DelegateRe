@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Human.h"
+#import "NormDoctor.h"
+#import "BadDoctor.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,138 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSMutableArray *sickPatientArray = [NSMutableArray new];
+    
+    for (int i = 0; i < 11; i++) {
+        Human *patient = [Human new];
+        NSInteger randomValue = arc4random_uniform(36) + 8;     // from 36 to 42
+        int sickPartOfTheBody = arc4random_uniform(3);    // from 0 to 3 - 1
+        patient.name = [NSString stringWithFormat:@"%dPatient", i];
+        patient.temperature = randomValue;
+        patient.hurts = sickPartOfTheBody;
+        
+        patient.rating = arc4random_uniform(6);     //  from 0 to 5
+        
+        [sickPatientArray addObject:patient];
+    }
+    NormDoctor *drHous = [NormDoctor new];
+    BadDoctor *drAverin = [BadDoctor new];
+#pragma mark -stud_LVL
+//    for (Human *obj in sickPatientArray) {
+//        if (arc4random() % 2) {
+//            NSLog(@"+++Good Doc+++");
+//            [obj setDelegateNormDoctor:drHous];
+//            [obj howAreYouBadDoc];
+//            [obj patientBecameIllGoodDoc];
+//        } else {
+//            NSLog(@"+++Bad Doc+++");
+//            [obj setDelegateBadDoctor:drAverin];
+//            [obj howAreYouBadDoc];
+//            [obj patientBecameIllBadDoc];
+//        }
+//    }
+    
+#pragma mark -mastr_lvl
+//    NSMutableDictionary *unsortArrayGoodDr = [NSMutableDictionary new];
+//    NSMutableDictionary *unsortArrayBadDr = [NSMutableDictionary new];
+//    for (int i = 0; i < sickPatientArray.count; i++) {
+//        Human *string = [sickPatientArray objectAtIndex:i];
+//        if (arc4random() % 2) {
+//            NSLog(@"+++Good Dr+++");
+//            [string setDelegateNormDoctor:drHous];
+//            NSLog(@"What Hurts, %@", string.name);
+//            if (string.hurts == 0) {
+//                [string headache];
+//            } else if ( string.hurts == 1) {
+//                [string stomachHerts];
+//            } else {
+//                [string soreLeg];
+//            }
+//            [unsortArrayGoodDr setObject:string forKey:[NSString stringWithFormat:@"%d, %u", i,string.hurts]];
+//        } else {
+//            NSLog(@"---Bad Dr---");
+//            [string setDelegateBadDoctor:drAverin];
+//            NSLog(@"What Hurts, %@", string.name);
+//            if (string.hurts == 0) {
+//                [string headache];
+//            } else if ( string.hurts == 1) {
+//                [string stomachHerts];
+//            } else {
+//                [string soreLeg];
+//            }
+//            [unsortArrayBadDr setObject:string forKey:[NSString stringWithFormat:@"%d, %d", i, string.hurts]];
+//        }
+//    }
+//    NSLog(@"Raport good doctor");
+//    NSArray *sortArrayGoodDr = [unsortArrayGoodDr keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//        NSString *first = [NSString stringWithFormat:@"%u", [(Human *) obj1 hurts]];
+//        NSString *second = [NSString stringWithFormat:@"%u", [(Human *) obj2 hurts]];
+//        return [first compare:second];
+//    }];
+//    for (int i = 0; i < sortArrayGoodDr.count; i++) {
+//        NSString *obj = [sortArrayGoodDr objectAtIndex:i];
+//        NSLog(@"%@ - %u", [unsortArrayGoodDr [obj] name], [unsortArrayGoodDr [obj] hurts]);
+//    }
+//    NSLog(@"Raport good doctor");
+//    NSArray *sotrArrayBadDr = [unsortArrayBadDr keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//        NSString *first = [NSString stringWithFormat:@"%u", [(Human *) obj1 hurts]];
+//        NSString *second = [NSString stringWithFormat:@"%u", [(Human *) obj2 hurts]];
+//        return [first compare:second];
+//    }];
+//    for (int i = 0; i < sotrArrayBadDr.count; i++) {
+//        NSString *obj = [sotrArrayBadDr objectAtIndex:i];
+//        NSLog(@"%@ - %u",[unsortArrayBadDr [obj] name] , [unsortArrayBadDr [obj] hurts]);
+//    }
+    
+#pragma mark -Superman
+//    for (Human *obj in sickPatientArray) {
+//        if (arc4random() % 2) {
+//            NSLog(@"+++Good Dr+++");
+//            [obj setDelegateNormDoctor:drHous];
+//            NSLog(@"Rating - %ld", obj.rating);
+//            
+//        } else {
+//            NSLog(@"---Bad Dr---");
+//            [obj setDelegateBadDoctor:drAverin];
+//            NSLog(@"Rating - %ld", obj.rating);
+//        }
+//        
+//    }
+    NSMutableArray *disgruntledPatientHous = [NSMutableArray new];
+    NSMutableArray *disgruntledPatientAverin = [NSMutableArray new];
+    for (int i = 0; i < sickPatientArray.count; i++) {
+        Human *obj = [sickPatientArray objectAtIndex:i];
+        if (arc4random() % 2) {
+            NSLog(@"+++Good Dr+++");
+            [obj setDelegateNormDoctor:drHous];
+            NSLog(@"Rating - %ld", obj.rating);
+            
+            // если лечение не понравилось
+//            if (obj.rating <= 3) {
+//                [disgruntledPatientHous addObject:obj];
+//            }
+            [obj patientDicision];
+
+            
+        } else {
+            NSLog(@"---Bad Dr---");
+            [obj setDelegateBadDoctor:drAverin];
+            NSLog(@"Rating - %ld", obj.rating);
+            
+            // если лечение не понравилось
+//            if (obj.rating <= 3) {
+//                [disgruntledPatientAverin addObject:obj];
+//            }
+            [obj patientDicision];
+        }
+    }
+    
+
+    NSLog(@"%@", disgruntledPatientAverin);
+    NSLog(@"%@", disgruntledPatientHous);
+
+    
     return YES;
 }
 
